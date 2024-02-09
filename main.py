@@ -8,7 +8,6 @@ filepaths = glob.glob('invoices/*xlsx')
 for filepath in filepaths:
     df = pd.read_excel(filepath, sheet_name="Sheet 1")
     pdf = FPDF(orientation="P", unit="mm", format="A4")
-    print(filepath)
     pdf.add_page()
     filename = Path(filepath).stem  # ilk iter için invoices/10001-2023.1.18.xlsx xlsx ve invoices değerini atar
     invoice_nr = filename.split("-")
